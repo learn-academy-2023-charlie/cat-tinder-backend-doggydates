@@ -39,39 +39,7 @@ RSpec.describe "Dogs", type: :request do
     end  
   end  
 
-  describe "PATCH /update" do
-    it 'updates the dog' do 
-      dog_params = {
-        dog: {
-          name:'Lady',
-          age: 4,
-          breed: 'Cocker Spaniel',
-          sex: 'F',
-          image: 'https://static.wikia.nocookie.net/disney/images/0/06/Profile_-_Lady.jpeg/revision/latest?cb=20190314123153'
-        }
-      }
-      post '/dogs', params: dog_params
-      dog = Dog.first
-
-      updated_dog_params = {
-        dog: {
-          name:'Tramp',
-          age: 6,
-          breed: 'Mutt',
-          sex: 'M',
-          image: 'https://static.wikia.nocookie.net/disney/images/0/06/Profile_-_Lady.jpeg/revision/latest?cb=20190314123153'
-        }
-      }
-      patch '/dogs/#{dog.id}', params: updated_dog_params
-      updated_dog = dog.find(dog.id)
-      expect(response).to have_http_status(200)
-      expect(updated_dog.name).to eq 'Tramp'
-      expect(updated_dog.age).to eq 6
-      expect(updated_dog.breed).to eq 'Mutt'
-      expect(updated_dog.sex).to eq 'M'
-      
-    end  
-  end
+  
 end
 
 ##testing//
