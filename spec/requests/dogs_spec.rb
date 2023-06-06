@@ -37,9 +37,68 @@ RSpec.describe "Dogs", type: :request do
       expect(dog.breed).to eq 'Cocker Spaniel'
       expect(dog.sex).to eq 'F'
     end  
+    it 'will not create a dog that is missing a name' do
+      dog_params = {
+        dog: {
+          name:nil,
+          age: 4,
+          breed: 'Cocker Spaniel',
+          sex: 'F'
+        }
+      }
+      post '/dogs', params: dog_params
+      p "create response", response.status
+      expect(response.status).to eq(422)
+      dog_json = JSON.parse(response.body)
+      expect(dog_json['name']).to include "can't be blank"
+    end
+    it 'will not create a dog that is missing an age' do
+      dog_params = {
+        dog: {
+          name:'Lady',
+          age:nil,
+          breed: 'Cocker Spaniel',
+          sex: 'F'
+        }
+      }
+      post '/dogs', params: dog_params
+      p "create response", response.status
+      expect(response.status).to eq(422)
+      dog_json = JSON.parse(response.body)
+      expect(dog_json['age']).to include "can't be blank"
+    end
+    it 'will not create a dog that is missing a breed' do
+      dog_params = {
+        dog: {
+          name:'Lady',
+          age: 4,
+          breed:nil,
+          sex: 'F'
+        }
+      }
+      post '/dogs', params: dog_params
+      p "create response", response.status
+      expect(response.status).to eq(422)
+      dog_json = JSON.parse(response.body)
+      expect(dog_json['breed']).to include "can't be blank"
+    end
+    it 'will not create a dog that is missing a sex' do
+      dog_params = {
+        dog: {
+          name:'Lady',
+          age: 4,
+          breed: 'Cocker Spaniel',
+          sex:nil
+        }
+      }
+      post '/dogs', params: dog_params
+      p "create response", response.status
+      expect(response.status).to eq(422)
+      dog_json = JSON.parse(response.body)
+      expect(dog_json['sex']).to include "can't be blank"
+    end
   end  
 
-  
 end
 
 ##testing//
