@@ -8,24 +8,24 @@
 dogs = [
   {
     name: 'Scooby',
-    age: 8,
+    age: 6,
     breed: 'Great Dane',
     sex: 'M',
-    image: 'https://static.wikia.nocookie.net/p__/images/d/db/Scooby-Doo_transparent.png/revision/latest?cb=20200609210749&path-prefix=protagonist'
+    image: 'https://www.cartonionline.com/gif/CARTOON/hanna_e_barbera/scooby-doo/Scooby-doo_08.jpg'
+  },
+  {
+    name: 'Pongo',
+    age: 5,
+    breed: 'Dalmation',
+    sex: 'M',
+    image: 'https://static.wikia.nocookie.net/disney/images/3/3c/Profile_-_Pongo.png'
   },
   {
     name: 'Lady',
     age: 4,
     breed: 'Cocker Spaniel',
     sex: 'F',
-    image: 'https://static.wikia.nocookie.net/disney/images/0/06/Profile_-_Lady.jpeg/revision/latest?cb=20190314123153'
-  },
-  {
-    name: 'Pongo',
-    age: 8,
-    breed: 'Dalmation',
-    sex: 'M',
-    image: 'https://static.wikia.nocookie.net/disney/images/3/3c/Profile_-_Pongo.png/revision/latest?cb=20200504214003'
+    image: 'https://static.wikia.nocookie.net/disney/images/0/06/Profile_-_Lady.jpeg'
   },
 ]
 
